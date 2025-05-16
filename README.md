@@ -94,9 +94,9 @@ The following table summarizes the performance metrics for the improved models:
 
 | Model                | Train Time (s) | Train Accuracy | Test Accuracy | Precision | Recall  | F1 Score | AUC     |
 |----------------------|----------------|----------------|---------------|-----------|---------|----------|---------|
-| Logistic Regression  | 39.04          | 0.9107         | 0.9098        | 0.6576    | 0.4159  | 0.5096   | 0.9333  |
-| Decision Trees       | 52.84          | 0.9175         | 0.9142        | 0.6503    | 0.5151  | 0.5749   | 0.9303  |
-| KNN                  | 541.80         | 1.0000         | 0.9024        | 0.6330    | 0.3179  | 0.4232   | 0.9129  |
+| Logistic Regression  | 35.5           | 0.9000         | 0.8985        | 0.6632    | 0.2058  | 0.3141   | 0.7938  |
+| Decision Trees       | 28.6           | 0.9023         | 0.9023        | 0.6658    | 0.3847  | 0.3846   | 0.7887  |
+| KNN                  | 156.6          | 0.9059         | 0.8979        | 0.6195    | 0.3518  | 0.3518   | 0.7656  |
 
 
 
