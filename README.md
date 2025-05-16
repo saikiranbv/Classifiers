@@ -63,26 +63,24 @@ This is from UCI Machine Learning Repository https://archive.ics.uci.edu/dataset
 
 | Model                  | Train Time | Train Accuracy | Test Accuracy | Precision | Recall  | F1-Score | AUC    |
 |------------------------|------------|----------------|---------------|-----------|---------|----------|--------|
-| Logistic Regression     | 0.24      | 0.91           | 0.91          | 0.66      | 0.42    | 0.51     | 0.93   |
-| Decision Tree           | 0.20      | 1.00           | 0.89          | 0.51      | 0.53    | 0.52     | 0.73   |
-| KNN                     | 0.00248    | 0.93           | 0.90          | 0.59      | 0.40    | 0.47     | 0.86   |
-| SVM                     | 188.65      | 0.91           | 0.91          | 0.68      | 0.34    | 0.45     | 0.93   |
+| Logistic Regression    | 0.16       | 0.90           | 0.90          | 0.66      | 0.20    | 0.31     | 0.79   |
+| Decision Tree          | 0.12       | 0.99           | 0.84          | 0.30      | 0.33    | 0.33     | 0.63   |
+| KNN                    | 0.006      | 0.91           | 0.89          | 0.55      | 0.29    | 0.36     | 0.72   |
+| SVM                    | 192.78     | 0.90           | 0.90          | 0.67      | 0.18    | 0.29     | 0.71   |
 
-![image](https://github.com/user-attachments/assets/dece40c4-deaa-492e-81ca-ba30144cf2be)
-![image](https://github.com/user-attachments/assets/266f26aa-1566-4f69-afd4-8605aad15305)
-![image](https://github.com/user-attachments/assets/f3a0ffe3-5aaa-4df0-8652-eaf1e4c729cb)
+![image](https://github.com/saikiranbv/Classifiers/blob/main/images/Init_compare_models.png)
+![image](https://github.com/saikiranbv/Classifiers/blob/main/images/Init_confusion_matrix_models.png)
 
-  - **Decision Tree** had the best performance but with a lower AUC of 0.73 and the highest F1 score of 0.52, indicating a good balance between precision and recall.
-  - **Logistic Regression** also performed well, similar F1 score 0.51 and better AUC 0.93.
+  - **Logistic Regression** had the good performance and **Decision Tree** was similar
   - **KNN** was fastest but had lower F1 and AUC.
   - **SVM** computationally very expensive as compared to other models and had lowest F1.
 
 ### Model Optimization
 Hyperparameter tuning was performed using cross-validation and Grid Search:
-  - **Logistic Regression**: Best parameters found were `C=0.1`, `penalty='l1'`, and `solver='saga'`.
-  - **Decision Tree**: Best parameters were `criterion='gini'`, `max_depth=5`, `min_samples_leaf=1`, and `min_samples_split=2`.
-  - **KNN**: Optimal parameters were `n_neighbors=21`, `p=2`, and `weights='distance'`.
-  - **SVM**: The RBF kernel was found to be the best, but the model was computationally expensive for the given dataset, not evaluated further due to compute constraints.
+  - **Logistic Regression**: Best parameters found were 'C': 10, 'penalty': 'l2', 'solver': 'liblinear'
+  - **Decision Tree**: Best parameters were 'criterion': 'entropy', 'max_depth': 5, 'min_samples_leaf': 4, 'min_samples_split': 10
+  - **KNN**: Optimal parameters were 'n_neighbors': 13, 'p': 1, 'weights': 'uniform'
+  - **SVM**: The  model was computationally expensive for the given dataset, not evaluated further due to compute constraints.
 
 ## Evaluation
 
@@ -99,6 +97,8 @@ The following table summarizes the performance metrics for the improved models:
 | Logistic Regression  | 39.04          | 0.9107         | 0.9098        | 0.6576    | 0.4159  | 0.5096   | 0.9333  |
 | Decision Trees       | 52.84          | 0.9175         | 0.9142        | 0.6503    | 0.5151  | 0.5749   | 0.9303  |
 | KNN                  | 541.80         | 1.0000         | 0.9024        | 0.6330    | 0.3179  | 0.4232   | 0.9129  |
+
+
 
 ![image](https://github.com/user-attachments/assets/189d8944-f234-4f19-9b1a-f64bfad21e71)
 ![image](https://github.com/user-attachments/assets/054f1247-d888-4bd3-853e-c45b2856b461)
